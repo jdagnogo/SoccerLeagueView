@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/defaut_space_league_height_size"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/team_name"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/defaut_space_size"
+        android:text="club name" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:layout_width="@dimen/defaut_space_league_width_size"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="1" />
+
+
+</LinearLayout>
