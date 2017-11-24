@@ -13,6 +13,8 @@ public class League {
     private boolean isHomeAway = true;
 
     public League(boolean isHomeAway) {
+        teams = new ArrayList<>();
+        matchAlreadyPlayed = new HashMap<>();
         this.isHomeAway = isHomeAway;
 
     }

@@ -1,5 +1,6 @@
 package com.example.jdagnogo.soccerleagueview;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -8,7 +9,7 @@ import com.example.jdagnogo.soccerleagueviewlib.models.Team;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,24 @@ public class MainActivity extends AppCompatActivity {
         teams.add(chelsea);
         teams.add(tot);
         teams.add(manchester);
+
+        teams.add(arsenal);
+        teams.add(chelsea);
+        teams.add(tot);
+        teams.add(manchester);
+
+        teams.add(arsenal);
+        teams.add(chelsea);
+        teams.add(tot);
+        teams.add(manchester);
+
+        teams.add(arsenal);
+        teams.add(chelsea);
+        teams.add(tot);
+        teams.add(manchester);
+
+        teams.add(arsenal);
+        teams.add(chelsea);
         return teams;
     }
 }

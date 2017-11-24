@@ -1,6 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/defaut_space_league_height_size"
+    android:layout_height="match_parent"
     android:orientation="horizontal">
 
     <com.example.jdagnogo.soccerleagueviewlib.SoccerLeagueView

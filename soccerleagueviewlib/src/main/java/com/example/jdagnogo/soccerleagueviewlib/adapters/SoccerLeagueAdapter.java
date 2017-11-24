@@ -21,9 +21,6 @@ public class SoccerLeagueAdapter extends RecyclerView.Adapter<SoccerLeagueAdapte
         this.context = context;
     }
 
-    public SoccerLeagueAdapter(ArrayList<TeamInLeague> mDataset) {
-        this.mDataset = mDataset;
-    }
 
     @Override
     public SoccerLeagueAdapterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -35,20 +32,23 @@ public class SoccerLeagueAdapter extends RecyclerView.Adapter<SoccerLeagueAdapte
     @Override
     public void onBindViewHolder(SoccerLeagueAdapterViewHolder holder, int position) {
         holder.teamName.setText(mDataset.get(position).getTeam().getName());
+        holder.rank.setText(String.valueOf(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mDataset == null ? 0 : mDataset.size();
     }
 
 
     public class SoccerLeagueAdapterViewHolder extends RecyclerView.ViewHolder {
         final TextView teamName;
+        final TextView rank;
 
         public SoccerLeagueAdapterViewHolder(View itemView) {
             super(itemView);
             teamName = (TextView) itemView.findViewById(R.id.team_name);
+            rank = (TextView) itemView.findViewById(R.id.rank);
         }
     }
 }

@@ -5,5 +5,5 @@
 
     <dimen name="defaut_space_size">16dp</dimen>
     <dimen name="defaut_space_league_height_size">50dp</dimen>
-    <dimen name="defaut_space_league_width_size">20dp</dimen>
+    <dimen name="defaut_space_league_width_size">30dp</dimen>
 </resources>

@@ -42,6 +42,7 @@ public class SoccerLeagueView extends LinearLayout {
         } else {
             league.setStarted(true);
             initViews();
+            intiAdapter();
         }
 
     }
@@ -57,10 +58,11 @@ public class SoccerLeagueView extends LinearLayout {
     }
 
     private void intiAdapter() {
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(mLayoutManager);
         adapter = new SoccerLeagueAdapter(league.getTeams(), context);
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     private void initViews() {

@@ -1,22 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <TextView
         android:layout_width="match_parent"
-        android:text="League Name"
-        android:textColor="@android:color/white"
-        android:gravity="center_vertical"
-        android:textSize="@dimen/tite_text_size"
-        android:paddingLeft="@dimen/defaut_space_size"
+        android:layout_height="50dp"
         android:background="@color/primary"
-        android:layout_height="50dp" />
+        android:gravity="center_vertical"
+        android:elevation="6dp"
+        android:paddingLeft="@dimen/defaut_space_size"
+        android:text="Nom de la compétition"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/tite_text_size" />
 
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:elevation="5dp"
+        android:layout_marginTop="@dimen/defaut_space_size">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/defaut_space_league_width_size"
+            android:text="Club" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="MJ" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="G" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="N" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="P" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="BM" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="BE" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="+/-" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Pts" />
+
+    </LinearLayout>
+<View
+    android:layout_width="match_parent"
+    android:background="@color/secondaryDark"
+    android:layout_height="2dp"/>
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_height="wrap_content">
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>
