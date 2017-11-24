@@ -74,6 +74,7 @@
         <TextView
             android:layout_width="@dimen/defaut_space_league_width_size"
             android:layout_height="match_parent"
+            android:textColor="@color/secondaryDark"
             android:gravity="center"
             android:text="Pts" />
 

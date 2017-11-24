@@ -11,9 +11,12 @@ import android.widget.LinearLayout;
 
 import com.example.jdagnogo.soccerleagueviewlib.adapters.SoccerLeagueAdapter;
 import com.example.jdagnogo.soccerleagueviewlib.models.League;
+import com.example.jdagnogo.soccerleagueviewlib.models.Match;
 import com.example.jdagnogo.soccerleagueviewlib.models.Team;
+import com.example.jdagnogo.soccerleagueviewlib.models.TeamInLeague;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SoccerLeagueView extends LinearLayout {
 
@@ -32,6 +35,12 @@ public class SoccerLeagueView extends LinearLayout {
         updateElementsAccordingToAttributs(context, attrs);
     }
 
+    public void addMatch(Match match) {
+        league.addMatch(match);
+        ArrayList<TeamInLeague> list = new ArrayList<TeamInLeague>(league.getTeams().values());
+        adapter.setDataSet(list);
+    }
+
     private void updateElementsAccordingToAttributs(Context context, AttributeSet attrs) {
 
     }
@@ -40,7 +49,7 @@ public class SoccerLeagueView extends LinearLayout {
         if (league.getTeams().size() < 2) {
             //TODO show toast
         } else {
-            league.setStarted(true);
+            league.startTournament();
             initViews();
             intiAdapter();
         }
@@ -60,7 +69,8 @@ public class SoccerLeagueView extends LinearLayout {
     private void intiAdapter() {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(mLayoutManager);
-        adapter = new SoccerLeagueAdapter(league.getTeams(), context);
+        ArrayList<TeamInLeague> list = new ArrayList<TeamInLeague>(league.getTeams().values());
+        adapter = new SoccerLeagueAdapter(list, context);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

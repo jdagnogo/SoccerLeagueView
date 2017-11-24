@@ -26,52 +26,52 @@
 
         <TextView
             android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/mj"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
+            android:gravity="center" />
 
 
         <TextView
             android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/g"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/n"
+            android:layout_height="match_parent"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/p"
+            android:layout_height="match_parent"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/bm"
+            android:layout_height="match_parent"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/be"
+            android:layout_height="match_parent"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="@dimen/defaut_space_league_width_size"
+            android:id="@+id/diff"
+            android:layout_height="match_parent"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="@dimen/defaut_space_league_width_size"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
-
-        <TextView
-            android:layout_width="@dimen/defaut_space_league_width_size"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
-
-        <TextView
-            android:layout_width="@dimen/defaut_space_league_width_size"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
-
-        <TextView
-            android:layout_width="@dimen/defaut_space_league_width_size"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
-
-        <TextView
-            android:layout_width="@dimen/defaut_space_league_width_size"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
-
-        <TextView
-            android:layout_width="@dimen/defaut_space_league_width_size"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="1" />
+            android:id="@+id/pts"
+            android:gravity="center" />
     </LinearLayout>
 
     <View
