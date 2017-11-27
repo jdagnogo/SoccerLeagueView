@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.jdagnogo.soccerleagueviewlib.adapters.SoccerLeagueAdapter;
 import com.example.jdagnogo.soccerleagueviewlib.models.League;
@@ -18,13 +19,14 @@ import com.example.jdagnogo.soccerleagueviewlib.models.TeamInLeague;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class SoccerLeagueView extends LinearLayout {
+public class SoccerLeagueView extends LinearLayout implements View.OnClickListener {
 
     View rootView;
     League league;
     private Context context;
     private RecyclerView recyclerView;
     private SoccerLeagueAdapter adapter;
+    private TextView mj, g, n, p, bm, be, diff, pts;
 
     public SoccerLeagueView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -33,6 +35,26 @@ public class SoccerLeagueView extends LinearLayout {
         league = new League(true);
         initViews();
         updateElementsAccordingToAttributs(context, attrs);
+    }
+
+    private void initTextviews() {
+        mj = (TextView) rootView.findViewById(R.id.mj);
+        g = (TextView) rootView.findViewById(R.id.g);
+        n = (TextView) rootView.findViewById(R.id.n);
+        p = (TextView) rootView.findViewById(R.id.p);
+        bm = (TextView) rootView.findViewById(R.id.bm);
+        be = (TextView) rootView.findViewById(R.id.be);
+        diff = (TextView) rootView.findViewById(R.id.diff);
+        pts = (TextView) rootView.findViewById(R.id.pts);
+
+        mj.setOnClickListener(this);
+        g.setOnClickListener(this);
+        p.setOnClickListener(this);
+        n.setOnClickListener(this);
+        be.setOnClickListener(this);
+        bm.setOnClickListener(this);
+        diff.setOnClickListener(this);
+        pts.setOnClickListener(this);
     }
 
     public void addMatch(Match match) {
@@ -66,6 +88,21 @@ public class SoccerLeagueView extends LinearLayout {
         }
     }
 
+    private void resetTextViewColors() {
+        mj.setTextColor(getResources().getColor(R.color.defaut_black));
+        g.setTextColor(getResources().getColor(R.color.defaut_black));
+        p.setTextColor(getResources().getColor(R.color.defaut_black));
+        n.setTextColor(getResources().getColor(R.color.defaut_black));
+        be.setTextColor(getResources().getColor(R.color.defaut_black));
+        bm.setTextColor(getResources().getColor(R.color.defaut_black));
+        pts.setTextColor(getResources().getColor(R.color.defaut_black));
+        diff.setTextColor(getResources().getColor(R.color.defaut_black));
+    }
+
+    private void setTextViewSelected(TextView textViewSelected) {
+        textViewSelected.setTextColor(getResources().getColor(R.color.secondaryDark));
+    }
+
     private void intiAdapter() {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -77,6 +114,7 @@ public class SoccerLeagueView extends LinearLayout {
 
     private void initViews() {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
+        initTextviews();
     }
 
     public void setupLayout(Context context) {
@@ -85,5 +123,29 @@ public class SoccerLeagueView extends LinearLayout {
 
         rootView = inflater.inflate(R.layout.main_view, this);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        resetTextViewColors();
+        if (i == R.id.mj) {
+            setTextViewSelected(mj);
+        } else if (i == R.id.g) {
+            setTextViewSelected(g);
+        } else if (i == R.id.n) {
+            setTextViewSelected(n);
+        } else if (i == R.id.p) {
+            setTextViewSelected(p);
+        } else if (i == R.id.bm) {
+            setTextViewSelected(bm);
+        } else if (i == R.id.be) {
+            setTextViewSelected(be);
+        } else if (i == R.id.diff) {
+            setTextViewSelected(diff);
+        } else if (i == R.id.pts) {
+            setTextViewSelected(pts);
+        }
+        adapter.order(i);
     }
 }

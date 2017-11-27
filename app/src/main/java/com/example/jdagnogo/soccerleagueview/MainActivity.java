@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         soccerLeagueView.addMatch(new Match(teams.get(1),teams.get(2),2,4));
         soccerLeagueView.addMatch(new Match(teams.get(2),teams.get(1),2,4));
         soccerLeagueView.addMatch(new Match(teams.get(2),teams.get(1),2,4));
-
+        soccerLeagueView.addMatch(new Match(teams.get(2),teams.get(0),2,4));
     }
 
     private void initTeams() {

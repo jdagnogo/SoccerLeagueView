@@ -8,4 +8,6 @@
     <color name="secondary">#ff4081</color>
     <color name="secondaryDark">#c60055</color>
     <color name="secondaryLight">#ff79b0</color>
+
+    <color name="defaut_black">#80131313</color>
 </resources>

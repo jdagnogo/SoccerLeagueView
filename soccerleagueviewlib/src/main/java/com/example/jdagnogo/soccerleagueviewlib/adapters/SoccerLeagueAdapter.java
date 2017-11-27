@@ -8,9 +8,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.jdagnogo.soccerleagueviewlib.R;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.BeComparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.BmComparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.DiffComparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.GComparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.MjComparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.NComparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.Pcomparator;
+import com.example.jdagnogo.soccerleagueviewlib.comparator.Pointscomparator;
 import com.example.jdagnogo.soccerleagueviewlib.models.TeamInLeague;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SoccerLeagueAdapter extends RecyclerView.Adapter<SoccerLeagueAdapter.SoccerLeagueAdapterViewHolder> {
@@ -22,13 +31,33 @@ public class SoccerLeagueAdapter extends RecyclerView.Adapter<SoccerLeagueAdapte
         this.context = context;
     }
 
+    public void order(int i) {
+        if (i == R.id.mj) {
+            Collections.sort(mDataset, new MjComparator());
+        } else if (i == R.id.g) {
+            Collections.sort(mDataset, new GComparator());
+        } else if (i == R.id.n) {
+            Collections.sort(mDataset, new NComparator());
+        } else if (i == R.id.p) {
+            Collections.sort(mDataset, new Pcomparator());
+        } else if (i == R.id.bm) {
+            Collections.sort(mDataset, new BmComparator());
+        } else if (i == R.id.be) {
+            Collections.sort(mDataset, new BeComparator());
+        } else if (i == R.id.diff) {
+            Collections.sort(mDataset, new DiffComparator());
+        } else{
+            Collections.sort(mDataset, new Pointscomparator());
+        }
+        notifyDataSetChanged();
+    }
 
     public void setDataSet(ArrayList<TeamInLeague> dataSet) {
         if (null != dataSet) {
             this.mDataset.clear();
             this.mDataset = new ArrayList<>();
             this.mDataset.addAll(dataSet);
-            notifyDataSetChanged();
+            order(0);
         }
 
     }
