@@ -26,22 +26,24 @@ This application allows you to :
 
 ```
 		allprojects {
-						repositories {
-							...
-							maven { url 'https://jitpack.io' }
+			repositories {
+				...
+				maven { url 'https://jitpack.io' }
 						}
 					}
 
 					
-		compile 'com.github.jdagnogo:soccerleagueview:1.0'
+		compile 'com.github.jdagnogo:SoccerLeagueView:1.0'
 ```
 
 # How to use :
 
 see the example in MainActivity
-```
-SoccerLeagueView soccerLeagueView = (SoccerLeagueView) findViewById(R.id.soccer);
+``` 	
+		initTeams();
+		SoccerLeagueView soccerLeagueView = (SoccerLeagueView) findViewById(R.id.soccer);
         soccerLeagueView.addTeam(teams);
+		
         // dont forget to call this method
         // a league will start if there more than one team
         soccerLeagueView.startLeague("Premiere League");
@@ -53,4 +55,11 @@ SoccerLeagueView soccerLeagueView = (SoccerLeagueView) findViewById(R.id.soccer)
 
         // or add a single match
         soccerLeagueView.addMatch(new Match(teams.get(1),teams.get(2),1,4));
+		
+		  private void initTeams() {
+				for( int i =0; i<19;i++){
+				Team team = new Team("team"+i,"t"+i);
+				teams.add(team);
+				}
+		  }
 ```
