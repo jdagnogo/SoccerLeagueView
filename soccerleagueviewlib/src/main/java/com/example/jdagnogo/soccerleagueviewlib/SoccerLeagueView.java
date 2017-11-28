@@ -17,16 +17,15 @@ import com.example.jdagnogo.soccerleagueviewlib.models.Team;
 import com.example.jdagnogo.soccerleagueviewlib.models.TeamInLeague;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class SoccerLeagueView extends LinearLayout implements View.OnClickListener {
 
     View rootView;
-    League league;
+    private League league;
     private Context context;
     private RecyclerView recyclerView;
     private SoccerLeagueAdapter adapter;
-    private TextView mj, g, n, p, bm, be, diff, pts;
+    private TextView mj, g, n, p, bm, be, diff, pts, name;
 
     public SoccerLeagueView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -35,6 +34,14 @@ public class SoccerLeagueView extends LinearLayout implements View.OnClickListen
         league = new League(true);
         initViews();
         updateElementsAccordingToAttributs(context, attrs);
+    }
+
+    public League getLeague() {
+        return league;
+    }
+
+    public void setLeague(League league) {
+        this.league = league;
     }
 
     private void initTextviews() {
@@ -46,6 +53,8 @@ public class SoccerLeagueView extends LinearLayout implements View.OnClickListen
         be = (TextView) rootView.findViewById(R.id.be);
         diff = (TextView) rootView.findViewById(R.id.diff);
         pts = (TextView) rootView.findViewById(R.id.pts);
+        name = (TextView) rootView.findViewById(R.id.name);
+        name.setText(league.getName());
 
         mj.setOnClickListener(this);
         g.setOnClickListener(this);
@@ -63,11 +72,21 @@ public class SoccerLeagueView extends LinearLayout implements View.OnClickListen
         adapter.setDataSet(list);
     }
 
+    public void addMatch(ArrayList<Match> matchs) {
+        for (Match match : matchs) {
+            league.addMatch(match);
+        }
+        ArrayList<TeamInLeague> list = new ArrayList<TeamInLeague>(league.getTeams().values());
+        adapter.setDataSet(list);
+    }
+
     private void updateElementsAccordingToAttributs(Context context, AttributeSet attrs) {
 
     }
 
-    public void startLeague() {
+    public void startLeague(String name) {
+        this.name.setText(name);
+        league.setName(name);
         if (league.getTeams().size() < 2) {
             //TODO show toast
         } else {
@@ -75,7 +94,6 @@ public class SoccerLeagueView extends LinearLayout implements View.OnClickListen
             initViews();
             intiAdapter();
         }
-
     }
 
     public void addTeam(Team team) {

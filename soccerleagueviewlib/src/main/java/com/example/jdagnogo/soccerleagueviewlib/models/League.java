@@ -11,12 +11,20 @@ public class League {
     private HashMap<String, Match> matchAlreadyPlayed;
     private int numberOfMatchesByTeams;
     private boolean isHomeAway = true;
+    private String name;
 
     public League(boolean isHomeAway) {
         teams = new HashMap<>();
         matchAlreadyPlayed = new HashMap<>();
         this.isHomeAway = isHomeAway;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void addMatch(Match match) {
