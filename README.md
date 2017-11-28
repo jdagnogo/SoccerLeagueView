@@ -7,7 +7,7 @@ Feel free to send me suggestions or improvements  : jdagnogo11@gmail.com
 
 # Presentation : 
 
- <img src="https://github.com/jdagnogo/tournament_lib/blob/master/screenshots/logo.png" width="300" style=" float : left;">
+ <img src="https://github.com/jdagnogo/soccerleagueview/blob/master/screenshots/logo.png" width="300" style=" float : left;">
  
 This application allows you to :
   * create a league view
@@ -19,8 +19,8 @@ This application allows you to :
 
 # Screenshots : 
 
-<img src="https://github.com/jdagnogo/tournament_lib/blob/master/screenshots/Screenshot_2017-11-28-11-30-52.png" width="300" style=" float : left;">
-<img src="https://github.com/jdagnogo/tournament_lib/blob/master/screenshots/Screenshot_2017-11-28-11-46-07.png" width="300" style=" float : left;">
+<img src="https://github.com/jdagnogo/soccerleagueview/blob/master/screenshots/Screenshot_2017-11-28-11-30-52.png" width="300" style=" float : left;">
+<img src="https://github.com/jdagnogo/soccerleagueview/blob/master/screenshots/Screenshot_2017-11-28-11-46-07.png" width="300" style=" float : left;">
 
 # How to install :
 
